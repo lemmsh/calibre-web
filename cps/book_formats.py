@@ -77,6 +77,12 @@ def pdf_meta(tmp_file_path, original_file_name, original_file_extension):
         author = "Unknown"
         title = original_file_name
         subject = ""
+
+    if (title is None):
+        title = original_file_name
+    if (author is None):
+        author = "Unknown"
+
     return uploader.BookMeta(
         file_path = tmp_file_path,
         extension = original_file_extension,
